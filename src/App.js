@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import LeaderBoard from './Pages/LeaderBoard';
+import HomePage from './Pages/HomePage';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [players, setPlayers] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const response = await fetch(process.env.REACT_APP_API_URL);
+                const data = await response.json();
+                setPlayers(data.players);
+            } catch (error) {
+                console.error('Error fetching player data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
+
+    return (
+        <div className="overflow-x-auto bg-gray-900 text-white min-h-screen p-8">
+            {loading ? (
+                <p>Cargando 🫡</p>
+            ) : (
+                <HomePage />
+                
+                // <LeaderBoard players={players} />
+            )}
+        </div>
+    );
+};
 
 export default App;

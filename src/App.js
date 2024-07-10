@@ -30,7 +30,7 @@ const App = () => {
             ) : (
                 <HomePage />
                 
-                // <LeaderBoard players={players} />
+                //<LeaderBoard players={players} />
             )}
         </div>
     );

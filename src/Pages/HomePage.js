@@ -7,7 +7,7 @@ export const HomePage = () => {
     <div>
         <NavBar />
         <h1 className='text-2xl font-bold text-center mb-4'>
-            Bienvenido a mi propio Valorant Tracker 🚀
+            Valorant Tracker 🚀
         </h1>
     </div>
   )

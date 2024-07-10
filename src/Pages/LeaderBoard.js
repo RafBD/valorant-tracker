@@ -4,7 +4,7 @@ const LeaderBoard = ({ players }) => {
     return (
         <div className="overflow-x-auto bg-gray-900 text-white min-h-screen p-8">
             <h1 className="text-xl font-bold text-center mb-4">
-                North America Competitive Ranked Rating for Episode 9 - Act 1 LeaderBoard
+                Clasificación competitiva de Norteamérica para el episodio 9: tabla de clasificación del acto 1 (100 jugadores)
             </h1>
             {/* Form to select the act that you want to see the leaderboard for (optional) */}
             
@@ -21,11 +21,11 @@ const LeaderBoard = ({ players }) => {
             <table className="table-auto min-w-full overflow-hidden border border-white/50 text-center">
                 <thead className="bg-gray-800 text-white/50">
                     <tr>
-                        <th className="px-4 py-2">Rank</th>
-                        <th className="px-4 py-2">Player</th>
-                        <th className="px-4 py-2">Ranked Rating</th>
-                        <th className="px-4 py-2">Tier</th>
-                        <th className="px-4 py-2">Wins</th>
+                        <th className="px-4 py-2">Posición</th>
+                        <th className="px-4 py-2">Jugador</th>
+                        <th className="px-4 py-2">Puntos de Rango</th>
+                        <th className="px-4 py-2">Rango</th>
+                        <th className="px-4 py-2">Victorias</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,8 @@ const LeaderBoard = ({ players }) => {
                             <td className="px-4 py-2">{player.leaderboardRank}</td>
                             <td className="px-4 py-2">{player.gameName}</td>
                             <td className="px-4 py-2">{player.rankedRating}</td>
-                            <td className="px-4 py-2">{player.rankedTier}</td>
+                            <td className="px-4 py-2">{player.competitiveTier === 27 ? ' Radiant' : '0'}</td>
+                            
                             <td className="px-4 py-2">{player.numberOfWins}</td>
                         </tr>
                     ))}

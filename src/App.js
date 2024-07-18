@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import LeaderBoard from './Pages/LeaderBoard';
-import HomePage from './Pages/HomePage';
+import HomePage from './Pages/HomePage/HomePage';
 import './App.css';
 
 const App = () => {
@@ -24,15 +25,20 @@ const App = () => {
     }, []);
 
     return (
-        <div className="overflow-x-auto bg-gray-900 text-white min-h-screen p-8">
-            {loading ? (
-                <p>Cargando 🫡</p>
-            ) : (
-                <HomePage />
-                
-                //<LeaderBoard players={players} />
-            )}
-        </div>
+        <Router>
+            <div className="overflow-x-auto bg-gray-900 text-white min-h-screen">
+                {loading ? (
+                    <p>Cargando 🫡</p>
+                ) : (
+                    <>
+                        <HomePage />
+                        <Routes>
+                            <Route path="/leaderboard" element={<LeaderBoard players={players} />} />
+                        </Routes>
+                    </>
+                )}
+            </div>
+        </Router>
     );
 };
 

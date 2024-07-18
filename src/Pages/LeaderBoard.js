@@ -2,7 +2,7 @@ import React from "react";
 
 const LeaderBoard = ({ players }) => {
     return (
-        <div className="overflow-x-auto bg-gray-900 text-white min-h-screen p-8">
+        <div className="overflow-x-auto bg-gray-900 text-white min-h-screen p-5">
             <h1 className="text-xl font-bold text-center mb-4">
                 Clasificación competitiva de Norteamérica para el episodio 9: tabla de clasificación del acto 1 (100 jugadores)
             </h1>

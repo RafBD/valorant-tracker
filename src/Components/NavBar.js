@@ -15,7 +15,7 @@ export default function NavBar() {
                                 <div className="ml-10 flex space-x-4">
                                     {/* Encuentra a un jugador, Agente, ej. player#raf1, or Chamber */}
                                     <input type="text" placeholder="Buscar" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" />
-                                    <Link to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</Link>
+                                    <Link to="/HomePage" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</Link>
                                     <Link to="/leaderboard" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Leaderboard (Ranked)</Link>
                                 </div>
                             </div>

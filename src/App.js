@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import LeaderBoard from './Pages/LeaderBoard';
+import LeaderBoard from './Pages/LeaderBoard/LeaderBoard';
 import HomePage from './Pages/HomePage/HomePage';
+import NavBar from './Components/NavBar';
 import './App.css';
 
 const App = () => {
@@ -31,8 +32,9 @@ const App = () => {
                     <p>Cargando 🫡</p>
                 ) : (
                     <>
-                        <HomePage />
+                        <NavBar />
                         <Routes>
+                            <Route path="/HomePage" element={<HomePage players={players} />} />
                             <Route path="/leaderboard" element={<LeaderBoard players={players} />} />
                         </Routes>
                     </>

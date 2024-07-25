@@ -3,13 +3,13 @@ import './Leaderboard.css';
 
 const LeaderBoard = () => {
     const [players, setPlayers] = useState([]);
-    const [selectedAct, setSelectedAct] = useState('52ca6698-41c1-e7de-4008-8994d2221209'); // Acto 3 (Actual) por defecto
+    const [selectedAct, setSelectedAct] = useState(process.env.REACT_APP_ACT_ID_E91); // Acto 3 (Actual) por defecto
     const [loading, setLoading] = useState(true);
     const acts = [
-        { id: "ec876e6c-43e8-fa63-ffc1-2e8d4db25525", name: "Episodio 8: Acto 1" },
-        { id: "22d10d66-4d2a-a340-6c54-408c7bd53807", name: "Episodio 8: Acto 2" },
-        { id: "4539cac3-47ae-90e5-3d01-b3812ca3274e", name: "Episodio 8: Acto 3" },
-        { id: "52ca6698-41c1-e7de-4008-8994d2221209", name: "Episodio 9: Acto 1" },
+        { id: process.env.REACT_APP_ACT_ID_E81, name: "Episodio 8: Acto 1" },
+        { id: process.env.REACT_APP_ACT_ID_E82, name: "Episodio 8: Acto 2" },
+        { id: process.env.REACT_APP_ACT_ID_E83, name: "Episodio 8: Acto 3" },
+        { id: process.env.REACT_APP_ACT_ID_E91, name: "Episodio 9: Acto 1" },
     ];
 
     const regions = [
@@ -17,7 +17,7 @@ const LeaderBoard = () => {
         { id: "eu", name: "Europa" },
         { id: "ap", name: "Asia-Pacífico" },
         { id: "kor", name: "Korea" },
-        { id: "br", name: "Brazil" },
+        { id: "br", name: "Brasil" },
         { id: "latam", name: "Latinoamérica" },
     ]
 
